@@ -2,6 +2,7 @@
 Fast Javascript library to split an URL into its components using a one-line regular expression.
 
 The default parse result is very similar to the [Node.js url library](https://nodejs.org/docs/latest/api/url.html#url_url_parsing), but differs in a few minor ways:
+
 1. The `protocol` field leaves out the trailing `:`.
 2. `user` and `password` fields are available, besides `auth`.
 3. The leading `#` is removed from `hash`.
@@ -11,11 +12,11 @@ For a moderately long URL the basic parser is about 8-10 times faster than the N
 ## Methods
 
 | Method | Arg. | Return | Description |
-|:-:|:-:|---|
+|:---:|:---:|:--- |
 | `parse` | url | see below | Run the default (basic) parsing action |
 | `raw` | url | Array | Return the raw regexp result without parsing |
 | `basic` | url | Object | Returns an object similar to the Node.js native url class. |
-| `extended` | url | Object | Like basic, but parses the pathname for resolvable `.` and `..` elements and saves a split array in `pathArray`. Parses `query` into `queryObj`.
+| `extended` | url | Object | Like basic, but parses the pathname for resolvable `.` and `..` elements and saves a split array in `pathArray`. Parses `query` into `queryObj`. |
 
 ## Usage
 
