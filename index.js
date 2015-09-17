@@ -84,7 +84,7 @@ split.extended = function(url) {
         result.pathArray = result.pathname.replace(/(^\/)|(\/$)/, "").split('/');
     }
     if (result.search) {
-        result.queryObj = split.qs.parse(result.search);
+        result.queryObj = split.qs.parse(result.query);
     }
     return result;
 };

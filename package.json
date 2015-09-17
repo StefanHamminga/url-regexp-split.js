@@ -1,6 +1,6 @@
 {
   "name": "url-regexp-split",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Split a (standard, web, github, ssh compliant) URL into it's components using a one-line regular expression.",
   "main": "index.js",
   "scripts": {

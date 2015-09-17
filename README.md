@@ -65,8 +65,7 @@ Resulting object:
   /* These two properties are added by extended parsing */
   pathArray: [ 'api', 'users', 'get', '22iohoife.extension' ],
   queryObj: {
-    '?return': 'name',
-    return: 'email',
+    return: [ 'name', 'email' ],
     a: [ '3', '3', '3', '3', '3', '3', '3', '3', '3', '3' ]
   }
 }
