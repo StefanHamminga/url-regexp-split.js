@@ -1,7 +1,7 @@
 {
   "name": "url-regexp-split",
-  "version": "1.0.1",
-  "description": "Split a (standard, web, github, ssh compliant) URL into it's components using a one-line regular expression.",
+  "version": "1.0.2",
+  "description": "Fast library to split an URL into it's components using a one-line regular expression.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Please consult README.md for tests.\" && exit 0"
@@ -12,10 +12,10 @@
   },
   "keywords": [
     "url",
-    "split",
+    "parse",
     "regexp",
-    "ssh",
-    "github"
+    "query",
+    "querystring"
   ],
   "author": "Stefan Hamminga",
   "license": "LGPL-3.0",
