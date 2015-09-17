@@ -11,12 +11,19 @@ For a moderately long URL the basic parser is about 8-10 times faster than the N
 
 ## Methods
 
-| Method | Arg. | Return | Description |
-|:---:|:---:|:--- |
-| `parse` | url | see below | Run the default (basic) parsing action |
-| `raw` | url | Array | Return the raw regexp result without parsing |
-| `basic` | url | Object | Returns an object similar to the Node.js native url class. |
-| `extended` | url | Object | Like basic, but parses the pathname for resolvable `.` and `..` elements and saves a split array in `pathArray`. Parses `query` into `queryObj`. |
+Method | Arg. | Return | Description
+---|---|---|---
+`parse` | url | see below | Run the default (basic) parsing action.
+`raw` | url | Array | Return the raw regexp result without parsing.
+`basic` | url | Object | Returns an object similar to the Node.js native url class.
+`extended` | url | Object | Like basic, but parses the pathname for resolvable `.` and `..` elements and saves a split array in `pathArray`. Parses `query` into `queryObj`.
+
+## Configuration
+
+Property | Default | Description
+---|---|---
+`parse` | "basic" | Set default parse action to "raw", "basic" or "extended"
+`qs` | "querystringparser" | Use either [Node.js "querystring"](https://nodejs.org/api/querystring.html) or ["querystringparser"](https://www.npmjs.com/package/querystringparser)
 
 ## Usage
 
