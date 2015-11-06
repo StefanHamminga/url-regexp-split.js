@@ -1,6 +1,7 @@
 "use strict";
 
-var split   = require('../')();
+var split   = require('url-regexp-split')();
+//var split   = require('../')();
 var util    = require('util');
 var nodeurl = require('url');
 
