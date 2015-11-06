@@ -25,7 +25,7 @@ Property | Default | Description
 ---|---|---
 `parse` | "basic" | Set default parse action to "raw", "basic" or "extended"
 `qs` | "querystringparser" | Use either [Node.js "querystring"](https://nodejs.org/api/querystring.html) or ["querystringparser"](https://www.npmjs.com/package/querystringparser)
-`mime` | true | Use [mime](https://www.npmjs.com/package/mime) to determine the mime type
+`mime` | true | Determine the URL extension & MIME type
 
 ## Usage
 
@@ -83,3 +83,5 @@ This project is available on [GitHub](https://github.com/StefanHamminga/url-rege
 The project is licensed as [LGPLv3](http://www.gnu.org/licenses/lgpl-3.0.html), the license file is included in the project directory.
 
 Copyright 2015 [Stefan Hamminga](mailto:stefan@prjct.net) - [prjct.net](https://prjct.net)
+
+The file `types.json` is part of [node mime](https://github.com/broofa/node-mime) and shared (MIT licensed) by Benjamin Thomas, Robert Kieffer

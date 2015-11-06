@@ -17,4 +17,4 @@ var urls = [
 for (var index in urls) {
     console.log(util.inspect(split.extended(urls[index]), { colors: true }));
 }
-console.log(util.inspect(nativeurl.parse(urls[urls.length - 1]), { colors: true }));
+console.log("\n\n" + util.inspect(nativeurl.parse(urls[urls.length - 1]), { colors: true }));

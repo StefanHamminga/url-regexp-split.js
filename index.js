@@ -24,8 +24,12 @@ var defaults = {
     qs: 'querystringparser', // 'querystring'
 };
 
-var mime = require('mime');
-var useMime = true;
+var getExt      = require('get-extension')();
+var useMime     = true;
+var mimes       = require('./types.json');
+var extToMime   = {};
+
+// var util = require('util');
 
 var split = {
     // https://regex101.com/r/eR9yG2/4
@@ -85,7 +89,8 @@ split.extended = function(url) {
         result.pathname = result.pathname.replace(/\/([^\/]+\/\.)?\.\//ig, '/');
         result.pathArray = result.pathname.replace(/(^\/)|(\/$)/, "").split('/');
         if (useMime) {
-            result.mime = mime.lookup(result.pathname);
+            result.extension = getExt(result.pathname);
+            result.mime = extToMime[result.extension];
         }
     }
     if (result.search) {
@@ -104,6 +109,7 @@ split.extended = function(url) {
  * @return {Object}        [description]
  */
 module.exports = function(config) {
+    "use strict";
     if (config) {
         split.parse     = split[config.parse || defaults.parse];
         split.qs        = require(config.qs || defaults.qs);
@@ -114,5 +120,15 @@ module.exports = function(config) {
         split.parse     = split[defaults.parse];
         split.qs        = require(defaults.qs);
     }
+
+    for (let name in mimes) {
+        if (mimes.hasOwnProperty(name)) {
+            let m = mimes[name];
+            for (let i = 0; i < m.length; i++) {
+                extToMime[m[i]] = name;
+            }
+        }
+    }
+
     return split;
 };
