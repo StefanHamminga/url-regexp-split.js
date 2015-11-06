@@ -3,6 +3,7 @@ var util        = require('util');
 var nativeurl   = require('url');
 
 var urls = [
+    "http://a/%%30%30",
     "img/logo.png",
     "/img/logo.png",
     "../img/logo.png",

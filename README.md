@@ -24,6 +24,7 @@ Property | Default | Description
 ---|---|---
 `parse` | "basic" | Set default parse action to "raw", "basic" or "extended"
 `qs` | "querystringparser" | Use either [Node.js "querystring"](https://nodejs.org/api/querystring.html) or ["querystringparser"](https://www.npmjs.com/package/querystringparser)
+`mime` | true | Use (mime)[https://www.npmjs.com/package/mime] to determine the mime type
 
 ## Usage
 

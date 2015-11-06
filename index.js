@@ -22,7 +22,8 @@ with this library.
 
 var defaults = {
     parse: 'basic',
-    qs: 'querystringparser' // 'querystring'
+    qs: 'querystringparser', // 'querystring'
+    mime: true
 };
 
 var split = {
@@ -82,6 +83,7 @@ split.extended = function(url) {
     if (result.pathname) {
         result.pathname = result.pathname.replace(/\/([^\/]+\/\.)?\.\//ig, '/');
         result.pathArray = result.pathname.replace(/(^\/)|(\/$)/, "").split('/');
+        result.mime = split.mime(result.pathname);
     }
     if (result.search) {
         result.queryObj = split.qs.parse(result.query);
@@ -102,6 +104,9 @@ module.exports = function(config) {
     if (config) {
         split.parse = split[config.parse || defaults.parse];
         split.qs    = require(config.qs || defaults.qs);
+        if ((config.mime === true) || (defaults.mime === true)) {
+            split.mime = require('mime').lookup;
+        }
     } else {
         split.parse = split[defaults.parse];
         split.qs    = require(defaults.qs);
