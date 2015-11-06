@@ -6,6 +6,7 @@ The default parse result is very similar to the [Node.js url library](https://no
 1. The `protocol` field leaves out the trailing `:`.
 2. `user` and `password` fields are available, besides `auth`.
 3. The leading `#` is removed from `hash`.
+4. The extended parser adds a `mime` property containing the MIME type for the `pathname` part of the URL.
 
 For a moderately long URL the basic parser is about 8-10 times faster than the Node.js library. The extended parser is still more than twice as fast as the native library. Using the raw parser instead of the basic parser is a little faster yet, about 40% faster than basic.
 
