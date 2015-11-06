@@ -1,6 +1,6 @@
 {
   "name": "url-regexp-split",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Fast library to split an URL into it's components using a one-line regular expression.",
   "main": "index.js",
   "scripts": {
@@ -10,6 +10,7 @@
     "type": "git",
     "url": "https://github.com/StefanHamminga/url-regexp-split.js.git"
   },
+  "tonicExampleFilename": "examples/demo.js",
   "keywords": [
     "url",
     "mime",
